@@ -23,9 +23,3 @@ func (db *UserRepository) Delete(id string) {
 	var user []models.User
 	db.DeleteById(&user, id)
 }
-
-//func (db *UserRepository) UserAdd(userId int, groupId int) []models.Groups {
-//	//db.Preload("UserID").Preload("GroupID").Preload().Where("UserID=?", userId).Where("GroupID=?", groupId).Find(&groups)
-//	print("123")
-//	return
-//}
