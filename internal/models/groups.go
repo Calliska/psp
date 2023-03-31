@@ -3,7 +3,7 @@ package models
 // Groups
 
 type Groups struct {
-	UserID  int    `json:"user-id"`
-	GroupID string `json:"group-id"`
-	RoleID  string `json:"role-id"`
+	UserID  int    `json:"userid"`
+	GroupID string `json:"groupid"`
+	RoleID  string `json:"roleid"`
 }

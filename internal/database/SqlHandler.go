@@ -3,7 +3,7 @@ package database
 import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"source/internal/database/interfaces"
+	"psp/internal/database/interfaces"
 )
 
 type SqlHandler struct {
