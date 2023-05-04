@@ -32,7 +32,7 @@ func dbinit() {
 	if err != nil {
 		fmt.Print("Role already exists")
 	}
-	err = db.Migrator().CreateTable(models.Group{})
+	err = db.Migrator().CreateTable(models.GroupNames{})
 	if err != nil {
 		fmt.Print("Group already exists")
 	}
@@ -43,5 +43,9 @@ func dbinit() {
 	err = db.Migrator().CreateTable(models.Announcement{})
 	if err != nil {
 		fmt.Print("Announcement already exists")
+	}
+	err = db.Migrator().CreateTable(models.Request{})
+	if err != nil {
+		fmt.Print("Requests already exists")
 	}
 }

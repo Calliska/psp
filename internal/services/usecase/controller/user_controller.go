@@ -17,6 +17,10 @@ func (interactor *UserInteractor) GetInfo() []models.User {
 	return interactor.UserRepository.Select()
 }
 
+func (interactor *UserInteractor) GetInfoByEmail(email string) models.User {
+	return interactor.UserRepository.SelectByEmail(email)
+}
+
 func (interactor *UserInteractor) Delete(id string) {
 	interactor.UserRepository.Delete(id)
 }

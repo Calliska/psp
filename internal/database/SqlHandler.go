@@ -4,6 +4,7 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"psp/internal/database/interfaces"
+	"psp/internal/models"
 )
 
 type SqlHandler struct {
@@ -37,4 +38,8 @@ func (handler *SqlHandler) Where(object interface{}, args ...interface{}) (tx *g
 }
 func (handler *SqlHandler) Preload(query string, args ...interface{}) (tx *gorm.DB) {
 	return handler.db.Preload(query, args)
+}
+
+func (handler *SqlHandler) Update(column string, obj interface{}) {
+	handler.db.Model(&models.Request{}).Update(column, obj)
 }
