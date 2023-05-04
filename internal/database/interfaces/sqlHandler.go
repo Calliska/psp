@@ -9,4 +9,5 @@ type SqlHandler interface {
 	FindAll(object interface{})
 	DeleteById(object interface{}, id string)
 	SelectById(object interface{}, id string)
+	Update(column string, object interface{})
 }

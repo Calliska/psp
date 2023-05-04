@@ -19,6 +19,12 @@ func (db *UserRepository) Select() []models.User {
 	return user
 }
 
+func (db *UserRepository) SelectByEmail(email string) models.User {
+	var user models.User
+	db.Preload("User").Where("email = ?", email).Find(&user)
+	return user
+}
+
 func (db *UserRepository) Delete(id string) {
 	var user []models.User
 	db.DeleteById(&user, id)
